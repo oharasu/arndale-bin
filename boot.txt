@@ -1,7 +1,7 @@
 setenv initrd_high "0xffffffff"
 setenv fdt_high "0xffffffff"
-# setenv bootcmd "fatload mmc 0:2 0x40007000 uImage; fatload mmc 0:2 0x42000000 uInitrd; fatload mmc 0:2 0x41f00000 board.dtb; bootm 0x40007000 0x42000000 0x41f00000"
-# setenv bootargs "console=ttySAC2,115200n8 drm_kms_helper.edid_firmware=edid-1920x1080.fw rootwait rootwait rw"
+# setenv bootcmd "fatload mmc 0:2 0x40007000 uImage; fatload mmc 0:2 0x42000000 uInitrd; fatload mmc 0:2 0x41f00000 exynos5250-arndale.dtb; bootm 0x40007000 0x42000000 0x41f00000"
+# setenv bootargs "console=ttySAC2,115200n8 drm_kms_helper.edid_firmware=edid-1920x1080.fw rootwait rw root=/dev/mmcblk1p3 init=/sbin/init"
 setenv bootcmd "fatload mmc 0:2 0x40007000 uImage; fatload mmc 0:2 0x41f00000 exynos5250-arndale.dtb; bootm 0x40007000 - 0x41f00000"
 setenv bootargs "console=ttySAC2,115200n8 drm_kms_helper.edid_firmware=edid-1920x1080.fw root=/dev/mmcblk1p3 rootwait rw init=/sbin/init"
 boot
